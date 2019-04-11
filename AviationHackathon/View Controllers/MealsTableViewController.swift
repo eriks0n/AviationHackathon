@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 protocol MealsTableViewControllerDelegate {
-    func mealsTableViewControllerDidFinishPicking(Meal meal: Meal)
+    func mealsTableViewControllerDidFinishPicking(Meal meal: Meal, andDessert dessert: Meal)
 }
 
 class MealsTableViewController: UITableViewController {
@@ -22,6 +22,7 @@ class MealsTableViewController: UITableViewController {
     var economyMeals = [Meal]()
     
     var selectedMeal = Meal()
+    var selectedDessert = Meal()
     
     var delegate: MealsTableViewControllerDelegate?
     
@@ -54,7 +55,7 @@ class MealsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return section == 0 ? "Business Meals" : "Economy Meals"
+        return section == 0 ? "Business Class" : "Economy Class"
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,6 +65,9 @@ class MealsTableViewController: UITableViewController {
         let mealForCell = indexPath.section == 0 ? businessMeals[indexPath.row] : economyMeals[indexPath.row]
         
         cell.textLabel?.text = mealForCell.name
+        cell.detailTextLabel?.text = mealForCell.type
+        
+        // if vegi
         
         if mealForCell.vegetarian == true {
             cell.imageView?.image = UIImage(named: "vegetarian-mark")
@@ -71,27 +75,37 @@ class MealsTableViewController: UITableViewController {
             cell.imageView?.image = UIImage(named: "beef")
         }
         
+        
+        // setting name of cell
         if mealForCell.name == selectedMeal.name {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
         }
+        
+        
  
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        for cell in tableView.visibleCells {
-            
-            cell.accessoryType = .none
-        }
-        
         let cell = tableView.cellForRow(at: indexPath)
+        
+        // accessory type (none or checkmark)
         cell?.accessoryType = .checkmark
         
-        selectedMeal = indexPath.section == 0 ? businessMeals[indexPath.row] : economyMeals[indexPath.row]
+        let selectedItem = indexPath.section == 0 ? businessMeals[indexPath.row] : economyMeals[indexPath.row]
         
+        if selectedItem.type == "Meal" {
+            
+            selectedMeal = selectedItem
+        } else if selectedItem.type == "Dessert" {
+            
+            selectedDessert = selectedItem
+        }
+        
+        // deselect row
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -108,12 +122,12 @@ class MealsTableViewController: UITableViewController {
                 newMeal.name = meal.1["name"].stringValue
                 newMeal.vegetarian = meal.1["vegetarian"].boolValue
                 newMeal.comfortClass = meal.1["comfortClass"].stringValue
+                newMeal.type = meal.1["type"].stringValue
                 
                 newMeal.comfortClass == "Business" ? self.businessMeals.append(newMeal) : self.economyMeals.append(newMeal)
             }
             
             self.tableView.reloadData()
-            
         }
     }
     
@@ -122,7 +136,7 @@ class MealsTableViewController: UITableViewController {
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         
-        delegate?.mealsTableViewControllerDidFinishPicking(Meal: selectedMeal)
+        delegate?.mealsTableViewControllerDidFinishPicking(Meal: selectedMeal, andDessert: selectedDessert)
         
         dismiss(animated: true, completion: nil)
     }

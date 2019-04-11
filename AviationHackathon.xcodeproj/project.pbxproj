@@ -21,6 +21,7 @@
 		DF20D01D225F83AE00C63960 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D01C225F83AE00C63960 /* UIColor+Hex.swift */; };
 		DF20D01F225F91AE00C63960 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D01E225F91AE00C63960 /* MealsTableViewController.swift */; };
 		DF20D021225F94CC00C63960 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D020225F94CC00C63960 /* Meal.swift */; };
+		DF20D024225FA3C900C63960 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D023225FA3C900C63960 /* Dessert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DF20D01C225F83AE00C63960 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		DF20D01E225F91AE00C63960 /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 		DF20D020225F94CC00C63960 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		DF20D023225FA3C900C63960 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		FF5E39D8AA4520B8781A8341 /* Pods-AviationHackathonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviationHackathonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AviationHackathonTests/Pods-AviationHackathonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				DF20D020225F94CC00C63960 /* Meal.swift */,
+				DF20D023225FA3C900C63960 /* Dessert.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				DF20D021225F94CC00C63960 /* Meal.swift in Sources */,
 				DF20D01D225F83AE00C63960 /* UIColor+Hex.swift in Sources */,
 				DF20CFF5225F3EEF00C63960 /* AppDelegate.swift in Sources */,
+				DF20D024225FA3C900C63960 /* Dessert.swift in Sources */,
 				DF20CFF7225F3EEF00C63960 /* SleepViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  Meal.swift
+//  Dessert.swift
 //  AviationHackathon
 //
 //  Created by Lennart Erikson on 11.04.19.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Meal {
+class Dessert {
     
-    var name = "Standard Meal"
+    var name = "Standard Dessert"
     var vegetarian = false
     var comfortClass = "Economy"
-    var type = "Meal"
+    var type = "Dessert"
 }
