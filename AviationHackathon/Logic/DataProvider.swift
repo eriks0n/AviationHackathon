@@ -15,12 +15,14 @@ enum APIEndpoint: String {
     case seatMap = "seatmap"
     case meals = "meals"
     case meal = "meal"
+    case toggleSleep = "sleep"
 }
 
 class DataProvider {
     
     let flightAPIBaseURL = "http://192.168.8.210/"
     let mealsAPIBaseURL = "http://192.168.8.210:1883/"
+    let noderedAPIBaseURL = "http://192.168.8.210:1883/"
     
     func getFlightData(withBlock block: @escaping (JSON) -> ()) {
         
@@ -75,6 +77,32 @@ class DataProvider {
         
         block()
         
+    }
+    
+    func save(TargetTemp temp: Int, withBlock block: () -> ()) {
+        
+        let params: Parameters = [
+            "temp": temp,
+        ]
+        
+        Alamofire.request("http://192.168.8.210:1883/temperature", method: .post, parameters: params, encoding: JSONEncoding.default)
+        
+        block()
+        
+    }
+    
+    func toggleSleepMode(IntoStatus status: Int, withBlock block: @escaping () -> ()) {
+        
+        let params: Parameters = [
+            "status": status
+        ]
+        
+        Alamofire.request("http://192.168.8.210:1883/sleep", method: .post, parameters: params, encoding: JSONEncoding.default).response { response in
+            
+            if response.response?.statusCode == 200 {
+                block()
+            }
+        }
     }
     
 }

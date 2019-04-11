@@ -8,11 +8,21 @@
 
 import UIKit
 import AGCircularPicker
+import SVProgressHUD
 
 class TemperatureViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var circularPickerView: AGCircularPickerView!
     @IBOutlet weak var targetTemperatureLabel: UILabel!
+    @IBOutlet weak var temperatureImageView: UIImageView!
+    
+    // MARK: - Instance Variables
+    let dataProvider = DataProvider()
+    
+    var targetTemperature: Int = 20
+    var currentTemperature: Int = 18
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,24 +31,51 @@ class TemperatureViewController: UIViewController {
         let titleOption = AGCircularPickerTitleOption(title: "Temperature")
         let option = AGCircularPickerOption(valueOption: valueOption, titleOption: titleOption)
         circularPickerView.setupPicker(delegate: self, option: option)
+        
+        targetTemperatureLabel.text = "Target: \(targetTemperature) °C"
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateCurrentTemperature()
     }
     
     func updateTargetTemperature(WithTemperature temp: Int) {
         
         targetTemperatureLabel.text = "Target: \(temp) °C"
+        targetTemperature = temp
+        
+        updateCurrentTemperature()
+        
+    }
+    
+    func updateCurrentTemperature() {
+        
+        // Update with data from server
+        
+        if currentTemperature < targetTemperature {
+            
+            temperatureImageView.image = UIImage(named: "low-temperature")
+        } else {
+            temperatureImageView.image = UIImage(named: "high-temperature")
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBActions
+    @IBAction func saveTemperatureButtonPressed(_ sender: UIButton) {
+        
+        dataProvider.save(TargetTemp: targetTemperature) {
+            
+            SVProgressHUD.setSuccessImage(UIImage(named: "high-temperature")!)
+            SVProgressHUD.setMaximumDismissTimeInterval(TimeInterval(exactly: 0.7)!)
+            SVProgressHUD.showSuccess(withStatus: "Temperature set.")
+        }
+        
     }
-    */
+    
 }
 
 extension TemperatureViewController: AGCircularPickerViewDelegate {

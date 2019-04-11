@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SVProgressHUD
 
 class SleepViewController: UIViewController {
     
@@ -97,7 +98,17 @@ class SleepViewController: UIViewController {
     @IBAction func toggleSleepModeButtonPressed(_ sender: UIButton) {
         
         isSleepModeEnabled.toggle()
+        toggleSleepModeButton.isEnabled = false
         
+        let statusToTrigger = isSleepModeEnabled == true ? 1 : 0
+        dataProvider.toggleSleepMode(IntoStatus: statusToTrigger) {
+            
+            SVProgressHUD.setSuccessImage(UIImage(named: "sleeping-in-bed")!)
+            SVProgressHUD.setMaximumDismissTimeInterval(TimeInterval(exactly: 0.7)!)
+            SVProgressHUD.showSuccess(withStatus: "You're set!")
+            
+            self.toggleSleepModeButton.isEnabled = true
+        }
     }
     
     
