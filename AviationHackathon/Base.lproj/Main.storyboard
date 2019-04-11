@@ -315,6 +315,7 @@
                     <tabBarItem key="tabBarItem" title="Temperature" image="high-temperature 2" id="d43-o5-ajt"/>
                     <connections>
                         <outlet property="circularPickerView" destination="wgi-He-naJ" id="nxa-hy-NmJ"/>
+                        <outlet property="currentTemperatureLabel" destination="acW-wa-Oci" id="lAA-b7-e7A"/>
                         <outlet property="targetTemperatureLabel" destination="4ZS-bF-DqO" id="CNv-Pt-eOg"/>
                         <outlet property="temperatureImageView" destination="ugt-XB-1NQ" id="rAW-eW-o81"/>
                     </connections>

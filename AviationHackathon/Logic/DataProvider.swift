@@ -56,6 +56,22 @@ class DataProvider {
         }
     }
     
+    func getCurrentTemperatureData(withBlock block: @escaping (JSON) -> ()) {
+        
+        let url = "http://192.168.8.210:1883/currentTemperature"
+        Alamofire.request(url).responseJSON { (response) in
+            
+            if response.result.isSuccess {
+                
+                if let data = response.result.value {
+                    
+                    block(JSON(data))
+                }
+                
+            }
+        }
+    }
+    
     func save(Meal meal: Meal, andDessert dessert: Meal, withBlock block: () -> ()) {
         
         let mealParameters: Parameters = [

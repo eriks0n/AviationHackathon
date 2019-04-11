@@ -17,6 +17,7 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var circularPickerView: AGCircularPickerView!
     @IBOutlet weak var targetTemperatureLabel: UILabel!
     @IBOutlet weak var temperatureImageView: UIImageView!
+    @IBOutlet weak var currentTemperatureLabel: UILabel!
     
     // MARK: - Instance Variables
     let dataProvider = DataProvider()
@@ -33,6 +34,7 @@ class TemperatureViewController: UIViewController {
         circularPickerView.setupPicker(delegate: self, option: option)
         
         targetTemperatureLabel.text = "Target: \(targetTemperature) °C"
+        updateCurrentTemperature()
 
     }
     
@@ -54,6 +56,11 @@ class TemperatureViewController: UIViewController {
     func updateCurrentTemperature() {
         
         // Update with data from server
+        dataProvider.getCurrentTemperatureData { (data) in
+         
+            self.currentTemperature = data[0]["temperature"].intValue
+            self.currentTemperatureLabel.text = "Currently: \(self.currentTemperature) °C"
+        }
         
         if currentTemperature < targetTemperature {
             
