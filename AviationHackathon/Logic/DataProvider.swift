@@ -13,19 +13,37 @@ import SwiftyJSON
 enum APIEndpoint: String {
     case flightStatus = "flightstatus"
     case seatMap = "seatmap"
+    case meals = "meals"
 }
 
 class DataProvider {
     
-    let apiBaseURL = "http://192.168.8.210/"
+    let flightAPIBaseURL = "http://192.168.8.210/"
+    let mealsAPIBaseURL = "http://192.168.8.210:1883/"
     
     func getFlightData(withBlock block: @escaping (JSON) -> ()) {
         
-        let url = "\(apiBaseURL)\(APIEndpoint.flightStatus)"
+        let url = "\(flightAPIBaseURL)\(APIEndpoint.flightStatus)"
         Alamofire.request(url).responseJSON { (response) in
             
             if response.result.isSuccess {
              
+                if let data = response.result.value {
+                    
+                    block(JSON(data))
+                }
+                
+            }
+        }
+    }
+    
+    func getMealData(withBlock block: @escaping (JSON) -> ()) {
+        
+        let url = "\(mealsAPIBaseURL)\(APIEndpoint.meals)"
+        Alamofire.request(url).responseJSON { (response) in
+            
+            if response.result.isSuccess {
+                
                 if let data = response.result.value {
                     
                     block(JSON(data))

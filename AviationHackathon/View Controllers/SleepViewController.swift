@@ -20,8 +20,11 @@ class SleepViewController: UIViewController {
     @IBOutlet weak var windowImageView: UIImageView!
     @IBOutlet weak var toggleSleepModeButton: UIButton!
     
+    @IBOutlet weak var dndLabel: UILabel!
+    @IBOutlet weak var windowsLabel: UILabel!
     
-    // MARK: - Instance variables
+    
+    // MARK: - Instance variables  
     let dataProvider = DataProvider()
     
     lazy var dateFormatter: DateFormatter = {
@@ -43,11 +46,17 @@ class SleepViewController: UIViewController {
                 dndImageView.image = UIImage(named: "moon-and-stars-filled")
                 windowImageView.image = UIImage(named: "airplane-window-closed")
                 
+                dndLabel.text = "Do not Disturb: ✅"
+                windowsLabel.text = "Windows: Closed"
+                
                 
             } else {
                 
                 dndImageView.image = UIImage(named: "moon-and-stars")
                 windowImageView.image = UIImage(named: "airplane-window-open")
+                
+                dndLabel.text = "Do not Disturb: ❌"
+                windowsLabel.text = "Windows: Open"
 
             }
             
@@ -57,7 +66,6 @@ class SleepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
     }
