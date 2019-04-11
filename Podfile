@@ -9,6 +9,7 @@ target 'AviationHackathon' do
   pod 'Alamofire'
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
+  pod 'AGCircularPicker'
 
   target 'AviationHackathonTests' do
     inherit! :search_paths

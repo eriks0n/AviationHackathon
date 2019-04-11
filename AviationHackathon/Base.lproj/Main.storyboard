@@ -291,11 +291,20 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-He-naJ" customClass="AGCircularPickerView" customModule="AGCircularPicker">
+                                <rect key="frame" x="82" y="402" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NbM-ff-Svx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Temperature" image="high-temperature 2" id="d43-o5-ajt"/>
+                    <connections>
+                        <outlet property="circularPickerView" destination="wgi-He-naJ" id="nxa-hy-NmJ"/>
+                        <outlet property="targetTemperatureLabel" destination="4ZS-bF-DqO" id="CNv-Pt-eOg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBm-0F-YRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
