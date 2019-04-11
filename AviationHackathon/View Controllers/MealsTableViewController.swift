@@ -26,6 +26,10 @@ class MealsTableViewController: UITableViewController {
     
     var delegate: MealsTableViewControllerDelegate?
     
+    // Used to make sure there are no more than two checkmarks
+    var lastDessertIndexPath: IndexPath?
+    var lastMealIndexPath: IndexPath?
+    
     // MARK: - ViewController Lifecycle
 
     override func viewDidLoad() {
@@ -77,9 +81,17 @@ class MealsTableViewController: UITableViewController {
         
         
         // setting name of cell
-        if mealForCell.name == selectedMeal.name {
+        if mealForCell.name == selectedMeal.name  {
+            
             cell.accessoryType = .checkmark
+            lastMealIndexPath = indexPath
+            
+        } else if mealForCell.name == selectedDessert.name {
+            
+            cell.accessoryType = .checkmark
+            lastDessertIndexPath = indexPath
         } else {
+            
             cell.accessoryType = .none
         }
         
@@ -100,9 +112,26 @@ class MealsTableViewController: UITableViewController {
         if selectedItem.type == "Meal" {
             
             selectedMeal = selectedItem
+            
+            if let lastIndex = lastMealIndexPath {
+                
+                let cell = tableView.cellForRow(at: lastIndex)
+                cell?.accessoryType = .none
+            }
+            
+            lastMealIndexPath = indexPath
+            
         } else if selectedItem.type == "Dessert" {
             
             selectedDessert = selectedItem
+            
+            if let lastIndex = lastDessertIndexPath {
+                
+                let cell = tableView.cellForRow(at: lastIndex)
+                cell?.accessoryType = .none
+            }
+            
+            lastDessertIndexPath = indexPath
         }
         
         // deselect row
