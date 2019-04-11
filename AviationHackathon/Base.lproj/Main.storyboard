@@ -79,13 +79,17 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do not Disturb: ❌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B4-BN-DxK">
-                                <rect key="frame" x="33" y="506" width="144" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do not Disturb: Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B4-BN-DxK">
+                                <rect key="frame" x="33" y="506" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="airplane-mode-on" translatesAutoresizingMaskIntoConstraints="NO" id="T4I-rS-Idw">
+                                <rect key="frame" x="170" y="161" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.1215686275" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,6 +103,7 @@
                         <outlet property="dndImageView" destination="YdP-C6-pYO" id="86Q-jd-pZz"/>
                         <outlet property="dndLabel" destination="3B4-BN-DxK" id="evC-1V-mbM"/>
                         <outlet property="etaLabel" destination="ykN-69-i8O" id="WV2-Il-Rjc"/>
+                        <outlet property="flightPhaseImageView" destination="T4I-rS-Idw" id="YVo-3J-Qyg"/>
                         <outlet property="toggleSleepModeButton" destination="5ZX-57-lxS" id="vz8-Ec-IuK"/>
                         <outlet property="windowImageView" destination="5aI-ZL-6e1" id="hP4-Ut-7hQ"/>
                         <outlet property="windowsLabel" destination="Kmq-zJ-f3n" id="Dd3-pk-HFc"/>
@@ -369,6 +374,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airplane-mode-on" width="33.333332061767578" height="33.333332061767578"/>
         <image name="airplane-window-open-1" width="33.333332061767578" height="33.333332061767578"/>
         <image name="business-cupcake" width="33.333332061767578" height="33.333332061767578"/>
         <image name="business-food" width="33.333332061767578" height="33.333332061767578"/>

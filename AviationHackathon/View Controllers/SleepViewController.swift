@@ -16,6 +16,7 @@ class SleepViewController: UIViewController {
     
     @IBOutlet weak var etaLabel: UILabel!
     @IBOutlet weak var distanceRemainingLabel: UILabel!
+    @IBOutlet weak var flightPhaseImageView: UIImageView!
     
     @IBOutlet weak var dndImageView: UIImageView!
     @IBOutlet weak var windowImageView: UIImageView!
@@ -38,6 +39,26 @@ class SleepViewController: UIViewController {
     
     }()
     
+    var flightStatus = "in flight" {
+        
+        didSet {
+            
+            switch flightStatus {
+            case "in flight":
+                flightPhaseImageView.image = UIImage(named: "airplane-mode-on")
+                
+            case "landing":
+                flightPhaseImageView.image = UIImage(named: "airplane-landing")
+                
+            case "departed":
+                flightPhaseImageView.image = UIImage(named: "airplane-take-off")
+                
+            default:
+                flightPhaseImageView.image = UIImage(named: "airplane-mode-on")
+            }
+        }
+    }
+    
     var isSleepModeEnabled = false {
         
         didSet {
@@ -47,7 +68,7 @@ class SleepViewController: UIViewController {
                 dndImageView.image = UIImage(named: "foggy-night-active")
                 windowImageView.image = UIImage(named: "airplane-window-closed-1")
                 
-                dndLabel.text = "Do not Disturb: ✅"
+                dndLabel.text = "Do not Disturb: On"
                 windowsLabel.text = "Windows: Closed"
                 
                 
@@ -56,7 +77,7 @@ class SleepViewController: UIViewController {
                 dndImageView.image = UIImage(named: "foggy-night")
                 windowImageView.image = UIImage(named: "airplane-window-open-1")
                 
-                dndLabel.text = "Do not Disturb: ❌"
+                dndLabel.text = "Do not Disturb: Off"
                 windowsLabel.text = "Windows: Open"
 
             }
@@ -87,8 +108,10 @@ class SleepViewController: UIViewController {
             
             
             let distanceRemaining = data["totalDistance"].doubleValue - data["distanceFlown"].doubleValue
-            
             self.distanceRemainingLabel.text = String(format: "%.2f", distanceRemaining)
+            
+            self.flightStatus = data["state"].stringValue
+            
             
         }
     }
