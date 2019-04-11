@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MealViewController: UIViewController {
     
@@ -52,6 +53,8 @@ class MealViewController: UIViewController {
             }
         }
     }
+    
+    let dataProvider = DataProvider()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,8 +92,17 @@ extension MealViewController: MealsTableViewControllerDelegate {
     
     func mealsTableViewControllerDidFinishPicking(Meal meal: Meal, andDessert dessert: Meal) {
      
+        // Start of network connectivity
+        SVProgressHUD.show(withStatus: "Telling our chefs 👩🏻‍🍳")
+        
         selectedMeal = meal
         selectedDessert = dessert
+        
+        // Request save
+        dataProvider.save(Meal: selectedMeal!, andDessert: selectedDessert!) {
+            SVProgressHUD.dismiss()
+        }
+        
     }
 }
 

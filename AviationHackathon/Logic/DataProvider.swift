@@ -14,6 +14,7 @@ enum APIEndpoint: String {
     case flightStatus = "flightstatus"
     case seatMap = "seatmap"
     case meals = "meals"
+    case meal = "meal"
 }
 
 class DataProvider {
@@ -51,6 +52,29 @@ class DataProvider {
                 
             }
         }
+    }
+    
+    func save(Meal meal: Meal, andDessert dessert: Meal, withBlock block: () -> ()) {
+        
+        let mealParameters: Parameters = [
+            "name": meal.name,
+            "vegetarian": meal.vegetarian,
+            "comfortClass": meal.comfortClass,
+            "type": meal.type
+        ]
+        
+        let dessertParameters: Parameters = [
+            "name": dessert.name,
+            "vegetarian": dessert.vegetarian,
+            "comfortClass": dessert.comfortClass,
+            "type": dessert.type
+        ]
+        
+        Alamofire.request("\(mealsAPIBaseURL)\(APIEndpoint.meal)", method: .post, parameters: mealParameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(mealsAPIBaseURL)\(APIEndpoint.meal)", method: .post, parameters: dessertParameters, encoding: JSONEncoding.default)
+        
+        block()
+        
     }
     
 }
