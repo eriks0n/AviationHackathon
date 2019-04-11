@@ -10,12 +10,14 @@
 		3FA9D0E9FE010BE38762C04B /* Pods_AviationHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F566CE5ED15ECD87399B2A8 /* Pods_AviationHackathon.framework */; };
 		A7A86FEDBE0A82356BFA4BC0 /* Pods_AviationHackathonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5780CBFDC522EC15149259CA /* Pods_AviationHackathonTests.framework */; };
 		DF20CFF5225F3EEF00C63960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20CFF4225F3EEF00C63960 /* AppDelegate.swift */; };
-		DF20CFF7225F3EEF00C63960 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20CFF6225F3EEF00C63960 /* FirstViewController.swift */; };
-		DF20CFF9225F3EEF00C63960 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20CFF8225F3EEF00C63960 /* SecondViewController.swift */; };
+		DF20CFF7225F3EEF00C63960 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20CFF6225F3EEF00C63960 /* SleepViewController.swift */; };
+		DF20CFF9225F3EEF00C63960 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20CFF8225F3EEF00C63960 /* MealViewController.swift */; };
 		DF20CFFC225F3EEF00C63960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF20CFFA225F3EEF00C63960 /* Main.storyboard */; };
 		DF20CFFE225F3EF000C63960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF20CFFD225F3EF000C63960 /* Assets.xcassets */; };
 		DF20D001225F3EF000C63960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF20CFFF225F3EF000C63960 /* LaunchScreen.storyboard */; };
 		DF20D00C225F3EF000C63960 /* AviationHackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D00B225F3EF000C63960 /* AviationHackathonTests.swift */; };
+		DF20D017225F661F00C63960 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D016225F661F00C63960 /* Theme.swift */; };
+		DF20D019225F6C7400C63960 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D018225F6C7400C63960 /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,8 @@
 		8D06B7C654B1C2D324902015 /* Pods-AviationHackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviationHackathon.release.xcconfig"; path = "Pods/Target Support Files/Pods-AviationHackathon/Pods-AviationHackathon.release.xcconfig"; sourceTree = "<group>"; };
 		DF20CFF1225F3EEF00C63960 /* AviationHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviationHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF20CFF4225F3EEF00C63960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF20CFF6225F3EEF00C63960 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		DF20CFF8225F3EEF00C63960 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DF20CFF6225F3EEF00C63960 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
+		DF20CFF8225F3EEF00C63960 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		DF20CFFB225F3EEF00C63960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF20CFFD225F3EF000C63960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF20D000225F3EF000C63960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		DF20D007225F3EF000C63960 /* AviationHackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AviationHackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF20D00B225F3EF000C63960 /* AviationHackathonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviationHackathonTests.swift; sourceTree = "<group>"; };
 		DF20D00D225F3EF000C63960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF20D016225F661F00C63960 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DF20D018225F6C7400C63960 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		FF5E39D8AA4520B8781A8341 /* Pods-AviationHackathonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviationHackathonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AviationHackathonTests/Pods-AviationHackathonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				DF20CFF4225F3EEF00C63960 /* AppDelegate.swift */,
-				DF20CFF6225F3EEF00C63960 /* FirstViewController.swift */,
-				DF20CFF8225F3EEF00C63960 /* SecondViewController.swift */,
+				DF20D01A225F701300C63960 /* View Controllers */,
+				DF20D01B225F702E00C63960 /* Logic */,
 				DF20CFFA225F3EEF00C63960 /* Main.storyboard */,
 				DF20CFFD225F3EF000C63960 /* Assets.xcassets */,
 				DF20CFFF225F3EF000C63960 /* LaunchScreen.storyboard */,
@@ -129,6 +133,24 @@
 				DF20D00D225F3EF000C63960 /* Info.plist */,
 			);
 			path = AviationHackathonTests;
+			sourceTree = "<group>";
+		};
+		DF20D01A225F701300C63960 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF20CFF6225F3EEF00C63960 /* SleepViewController.swift */,
+				DF20CFF8225F3EEF00C63960 /* MealViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DF20D01B225F702E00C63960 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				DF20D018225F6C7400C63960 /* DataProvider.swift */,
+				DF20D016225F661F00C63960 /* Theme.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,12 +263,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AviationHackathon/Pods-AviationHackathon-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -304,9 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF20CFF9225F3EEF00C63960 /* SecondViewController.swift in Sources */,
+				DF20CFF9225F3EEF00C63960 /* MealViewController.swift in Sources */,
+				DF20D017225F661F00C63960 /* Theme.swift in Sources */,
+				DF20D019225F6C7400C63960 /* DataProvider.swift in Sources */,
 				DF20CFF5225F3EEF00C63960 /* AppDelegate.swift in Sources */,
-				DF20CFF7225F3EEF00C63960 /* FirstViewController.swift in Sources */,
+				DF20CFF7225F3EEF00C63960 /* SleepViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

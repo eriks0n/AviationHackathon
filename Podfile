@@ -7,6 +7,8 @@ target 'AviationHackathon' do
 
   # Pods for AviationHackathon
   pod 'Alamofire'
+  pod 'SVProgressHUD'
+  pod 'SwiftyJSON'
 
   target 'AviationHackathonTests' do
     inherit! :search_paths

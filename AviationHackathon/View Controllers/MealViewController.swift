@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  AviationHackathon
 //
 //  Created by Lennart Erikson on 11.04.19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MealViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
