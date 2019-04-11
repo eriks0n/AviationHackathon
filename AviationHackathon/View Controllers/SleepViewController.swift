@@ -44,8 +44,8 @@ class SleepViewController: UIViewController {
             
             if isSleepModeEnabled == true {
                 
-                dndImageView.image = UIImage(named: "moon-and-stars-filled")
-                windowImageView.image = UIImage(named: "airplane-window-closed")
+                dndImageView.image = UIImage(named: "foggy-night-active")
+                windowImageView.image = UIImage(named: "airplane-window-closed-1")
                 
                 dndLabel.text = "Do not Disturb: ✅"
                 windowsLabel.text = "Windows: Closed"
@@ -53,8 +53,8 @@ class SleepViewController: UIViewController {
                 
             } else {
                 
-                dndImageView.image = UIImage(named: "moon-and-stars")
-                windowImageView.image = UIImage(named: "airplane-window-open")
+                dndImageView.image = UIImage(named: "foggy-night")
+                windowImageView.image = UIImage(named: "airplane-window-open-1")
                 
                 dndLabel.text = "Do not Disturb: ❌"
                 windowsLabel.text = "Windows: Open"
