@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 enum Theme: String {
-    case blueMainColor = "001f52"
-    case yellowMainColor = "f49e26"
-    case greyTextColor = "9b9b9b"
+    case blueMainColor = "#001f52"
+    case yellowMainColor = "#f49e26"
+    case greyTextColor = "#9b9b9b"
 }

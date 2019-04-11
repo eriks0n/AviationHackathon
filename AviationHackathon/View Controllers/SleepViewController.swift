@@ -11,10 +11,15 @@ import SwiftyJSON
 
 class SleepViewController: UIViewController {
     
-    // MARK: - IBActions
+    // MARK: - IBOutlets
     
     @IBOutlet weak var etaLabel: UILabel!
     @IBOutlet weak var distanceRemainingLabel: UILabel!
+    
+    @IBOutlet weak var dndImageView: UIImageView!
+    @IBOutlet weak var windowImageView: UIImageView!
+    @IBOutlet weak var toggleSleepModeButton: UIButton!
+    
     
     // MARK: - Instance variables
     let dataProvider = DataProvider()
@@ -29,9 +34,31 @@ class SleepViewController: UIViewController {
     
     }()
     
+    var isSleepModeEnabled = false {
+        
+        didSet {
+            
+            if isSleepModeEnabled == true {
+                
+                dndImageView.image = UIImage(named: "moon-and-stars-filled")
+                windowImageView.image = UIImage(named: "airplane-window-closed")
+                
+                
+            } else {
+                
+                dndImageView.image = UIImage(named: "moon-and-stars")
+                windowImageView.image = UIImage(named: "airplane-window-open")
+
+            }
+            
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
     }
     
@@ -56,7 +83,15 @@ class SleepViewController: UIViewController {
             
         }
     }
-
-
+    
+    // MARK: - IBActions
+    
+    @IBAction func toggleSleepModeButtonPressed(_ sender: UIButton) {
+        
+        isSleepModeEnabled.toggle()
+        
+    }
+    
+    
 }
 
