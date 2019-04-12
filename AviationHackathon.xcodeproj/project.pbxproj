@@ -23,6 +23,8 @@
 		DF20D021225F94CC00C63960 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D020225F94CC00C63960 /* Meal.swift */; };
 		DF20D024225FA3C900C63960 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D023225FA3C900C63960 /* Dessert.swift */; };
 		DF20D026225FAF6B00C63960 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D025225FAF6B00C63960 /* TemperatureViewController.swift */; };
+		DF20D0292260434E00C63960 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF20D0272260434E00C63960 /* Montserrat-Medium.ttf */; };
+		DF20D02A2260434E00C63960 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF20D0282260434E00C63960 /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		DF20D020225F94CC00C63960 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		DF20D023225FA3C900C63960 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		DF20D025225FAF6B00C63960 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		DF20D0272260434E00C63960 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DF20D0282260434E00C63960 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FF5E39D8AA4520B8781A8341 /* Pods-AviationHackathonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviationHackathonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AviationHackathonTests/Pods-AviationHackathonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +109,7 @@
 		DF20CFE8225F3EEF00C63960 = {
 			isa = PBXGroup;
 			children = (
+				DF20D02B2260435700C63960 /* Font */,
 				DF20CFF3225F3EEF00C63960 /* AviationHackathon */,
 				DF20D00A225F3EF000C63960 /* AviationHackathonTests */,
 				DF20CFF2225F3EEF00C63960 /* Products */,
@@ -174,6 +179,15 @@
 				DF20D023225FA3C900C63960 /* Dessert.swift */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		DF20D02B2260435700C63960 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				DF20D0272260434E00C63960 /* Montserrat-Medium.ttf */,
+				DF20D0282260434E00C63960 /* Montserrat-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +276,8 @@
 			files = (
 				DF20D001225F3EF000C63960 /* LaunchScreen.storyboard in Resources */,
 				DF20CFFE225F3EF000C63960 /* Assets.xcassets in Resources */,
+				DF20D0292260434E00C63960 /* Montserrat-Medium.ttf in Resources */,
+				DF20D02A2260434E00C63960 /* Montserrat-Regular.ttf in Resources */,
 				DF20CFFC225F3EEF00C63960 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
