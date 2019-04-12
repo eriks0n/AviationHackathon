@@ -61,6 +61,24 @@ class MealViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         selectedMealVegetarianInfoLabel.isHidden = true
+        
+        let defaultMeal = Meal()
+        defaultMeal.name = "Schnitzel & Pommes"
+        defaultMeal.vegetarian = false
+        defaultMeal.comfortClass = "Business"
+        defaultMeal.type = "Meal"
+        
+        selectedMeal = defaultMeal
+        
+        let defaultDessert = Meal()
+        defaultDessert.name = "Panna-Cotta"
+        defaultDessert.vegetarian = true
+        defaultDessert.comfortClass = "Business"
+        defaultDessert.type = "Dessert"
+        
+        selectedDessert = defaultDessert
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

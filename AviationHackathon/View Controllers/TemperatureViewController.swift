@@ -28,9 +28,10 @@ class TemperatureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let valueOption = AGCircularPickerValueOption(minValue: 18, maxValue: 23)
-        let titleOption = AGCircularPickerTitleOption(title: "Temperature")
-        let option = AGCircularPickerOption(valueOption: valueOption, titleOption: titleOption)
+        let valueOption = AGCircularPickerValueOption(minValue: 18, maxValue: 24, initialValue: 20)
+        let titleOption = AGCircularPickerTitleOption(title: "Temperature", titleFont: UIFont(name: "Montserrat-Medium", size: 17.0)!)
+        let tempColorOption = AGCircularPickerColorOption(gradientColors: [UIColor.rgb_color(r: 39, g: 174, b: 96), UIColor.rgb_color(r: 243, g: 156, b: 18), UIColor.rgb_color(r: 231, g: 76, b: 60)], gradientAngle: 90)
+        let option = AGCircularPickerOption(valueOption: valueOption, titleOption: titleOption, colorOption: tempColorOption)
         circularPickerView.setupPicker(delegate: self, option: option)
         
         targetTemperatureLabel.text = "Target: \(targetTemperature) °C"
@@ -64,9 +65,9 @@ class TemperatureViewController: UIViewController {
         
         if currentTemperature < targetTemperature {
             
-            temperatureImageView.image = UIImage(named: "low-temperature")
-        } else {
             temperatureImageView.image = UIImage(named: "high-temperature")
+        } else {
+            temperatureImageView.image = UIImage(named: "low-temperature")
         }
     }
     
